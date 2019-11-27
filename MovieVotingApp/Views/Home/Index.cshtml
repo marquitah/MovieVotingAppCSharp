@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Movie Voting App</h1>
+    <p class="lead">Cast your vote now!</p>
+    
+</div>
+
+<div>
+    <h4>Movie 1</h4>
+    <h4>Movie 2</h4>
+    <h4>Movie 3</h4>
+    <h4>Movie 4</h4>
+</div>
+
+<div class="row row-no-gutters m-3">
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto shadow">
+        <div class="card-header text-center">
+            <h3 class="m-0">Cast your vote!</h3>
+        </div>
+        <div class="card body">
+            @using (Html.BeginForm("Vote", "Voting", FormMethod.Post))
+            {
+            <div class="row-no-gutters ">
+                <div class="form-group col-md-12">
+                    <p>Favorite Movie: </p>
+                    <input name="Movie_Title" type="text" class="form-control" placeholder="Movie Title" />
+                </div>
+                <button type="submit" class="btn btn-primary">Vote!</button>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+       
+

@@ -1,0 +1,33 @@
+﻿@using MovieVotingApp.Models
+@model List<Movy>
+
+@{
+    ViewBag.Title = "index";
+}
+
+<h2>Administrative View of Movie Votes</h2>
+
+<div class="row no-gutters m-3">
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto shadow">
+        <div class="card-header text-center">
+            <h5 class="m-0">Movie Votes</h5>
+        </div>
+        <div class="card-body">
+            @foreach (var vote1 in Model)
+            {
+                using (Html.BeginForm("Index", "Admin", FormMethod.Post))
+                {
+                    <input type="hidden" name="Id" value="@vote1.Id" />
+                    <div class="row mb-3">
+                        <div class="col-2">
+                            @vote1.Movie_Title
+                        </div>
+                    </div>
+
+                }
+
+            }
+
+        </div>
+    </div>
+</div>
